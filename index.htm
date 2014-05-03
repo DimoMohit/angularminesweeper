@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" ng-app="minesweeper">
+<head>
+	<title>MineSweeper</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/angular.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/app.js"></script>
+</head>
+<body class="container">
+<div ng-controller="TodoCtrl" ng-init="init()">
+	<div><h2>{{name}}</h2></div>
+	<hr>
+	<div class="navbar navbar-default row" 
+	role="navigation">
+	<input type="number" class="col-xs-4" name="input" 
+	ng-model="value" placeholder="Dimention"
+    min="2" max="100" required>
+    <div class="col-xs-4">
+    	n = {{value}} ||
+    	Total Bombs ={{value*value/6}}
+    </div>
+    <button class="btn btn-primary col-xs-4" ng-click="generateGame()">
+    	Generate Game
+    </button>
+    </div>
+    <h3 class="col-md-5">Your Score : {{correctMatch}}</h3>
+    <h3 class="col-md-5 last-score">Last Score : {{lastScore}}</h3>
+    <table class=" table table-bordered ">
+    <tr ng-repeat="mine_row in mines">
+    	<td ng-repeat="mine_col in mines" id="{{value*mine_row+mine_col}}" ng-class="{'hid':!m,'displayed':m}" ng-click="mineCheck(mine_row,mine_col,value*mine_row+mine_col)">
+    	  {{value*mine_row+mine_col}}
+        </td>
+    </tr>
+    </table>
+    <div class="game-over">
+    	
+    </div>
+    <div class="answer">
+        <h3>{{bombinfo}}</h3>
+        <span ng-repeat="bom in dbombs track by $index">{{bom}},</span>
+    </div>
+</div>
+</body>
+</html>
