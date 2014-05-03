@@ -1,0 +1,31 @@
+.hid{
+    background: #fff;
+}
+.displayed{
+    background: green;
+}
+td,tr{
+	margin: 2px !important;
+}
+.game-over{
+	text-align: center;
+}
+.correct{
+	color:#fff;
+	font-weight: bold;
+	font-family: sans-serif;
+    text-align:center;
+    text-align:center;
+}
+.last-score{
+	text-align: right;
+}
+.navbar{
+	padding-top: 1%;
+	min-height: 60px !important;
+}
+h1,h2,h3{
+	font-family: cursive;
+	font-variant: small-caps;
+
+}
